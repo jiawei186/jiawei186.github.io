@@ -28,7 +28,7 @@
 <meta property="og:description" content="在一个数据库系统中，定义4个关系模式供应商表S：    SNO供货商代码 SNAME供货商姓名 STATUS供货商状态 CITY供货商所在城市            1234567CREATE TABLE S(	SNO char(3) primary key, 	SNAME char(10), 	STATUS char(2), 	CITY char(10),) ;    零件表P：    PNO零">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-06T07:37:06.000Z">
-<meta property="article:modified_time" content="2020-12-06T07:57:43.642Z">
+<meta property="article:modified_time" content="2020-12-06T14:33:05.390Z">
 <meta property="article:author" content="HuangJiaWei">
 <meta name="twitter:card" content="summary">
 
@@ -179,7 +179,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-12-06 15:37:06 / Modified: 15:57:43" itemprop="dateCreated datePublished" datetime="2020-12-06T15:37:06+08:00">2020-12-06</time>
+              <time title="Created: 2020-12-06 15:37:06 / Modified: 22:33:05" itemprop="dateCreated datePublished" datetime="2020-12-06T15:37:06+08:00">2020-12-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -342,10 +342,7 @@
 
 
 
-<h3 id="至少用了供应商S1所供应的全部零件的工程项目代码JNO"><a href="#至少用了供应商S1所供应的全部零件的工程项目代码JNO" class="headerlink" title="至少用了供应商S1所供应的全部零件的工程项目代码JNO"></a>至少用了供应商S1所供应的全部零件的工程项目代码JNO</h3><blockquote>
-<p>用p表示谓词“供应商S1供应了零件y”<br>用q表示谓词“工程项目代码x使用了零件y”<br>则“至少用了供应商S1所供应的全部零件的工程项目代码JNO”<br>等价于“对每一个零件y，只要它是供应商S1所供应的，那么工程项目代码x就使用了y”<br>等价于$\forall y (p \rightarrow q)$<br>上式可化简为$\lnot (\exists y (p \wedge \lnot q))$<br>等价于“不存在零件y，它是供应商S1所供应的，而工程项目代码x没有使用y”</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SELECT JNO</span><br><span class="line">FROM SPJ SPJX</span><br><span class="line">WHERE NOT EXISTS</span><br><span class="line">(</span><br><span class="line">	SELECT *</span><br><span class="line">	FROM SPJ SPJY</span><br><span class="line">	WHERE SPJY.SNO&#x3D;&#39;S1&#39; AND NOT EXISTS</span><br><span class="line">	(</span><br><span class="line">		SELECT *</span><br><span class="line">		FROM SPJ SPJZ</span><br><span class="line">		WHERE SPJX.JNO&#x3D;SPJZ.JNO AND SPJY.PNO&#x3D;SPJZ.PNO</span><br><span class="line">	)</span><br><span class="line">) ;</span><br></pre></td></tr></table></figure>
+<h3 id="至少用了供应商S1所供应的全部零件的工程项目代码JNO"><a href="#至少用了供应商S1所供应的全部零件的工程项目代码JNO" class="headerlink" title="至少用了供应商S1所供应的全部零件的工程项目代码JNO"></a>至少用了供应商S1所供应的全部零件的工程项目代码JNO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SELECT JNO</span><br><span class="line">FROM SPJ SPJX</span><br><span class="line">WHERE NOT EXISTS</span><br><span class="line">(</span><br><span class="line">	SELECT *</span><br><span class="line">	FROM SPJ SPJY</span><br><span class="line">	WHERE SPJY.SNO&#x3D;&#39;S1&#39; AND NOT EXISTS</span><br><span class="line">	(</span><br><span class="line">		SELECT *</span><br><span class="line">		FROM SPJ SPJZ</span><br><span class="line">		WHERE SPJX.JNO&#x3D;SPJZ.JNO AND SPJY.PNO&#x3D;SPJZ.PNO</span><br><span class="line">	)</span><br><span class="line">) ;</span><br></pre></td></tr></table></figure>
 
 
 

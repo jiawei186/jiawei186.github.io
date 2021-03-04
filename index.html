@@ -150,6 +150,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/04/Linear-regression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="HuangJiaWei">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="黄嘉玮-blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/04/Linear-regression/" class="post-title-link" itemprop="url">Linear-regression</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-03-04 16:32:21 / Modified: 16:33:11" itemprop="dateCreated datePublished" datetime="2021-03-04T16:32:21+08:00">2021-03-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linear-algebra/" itemprop="url" rel="index"><span itemprop="name">Linear-algebra</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Linear-regression"><a href="#Linear-regression" class="headerlink" title="Linear-regression"></a>Linear-regression</h1><p><strong>Linear-regression</strong>的中文翻译为<strong>线性回归</strong><br>但regression的本义更接近于<strong>倒推</strong></p>
+<h2 id="1-回归算法"><a href="#1-回归算法" class="headerlink" title="1 回归算法"></a>1 回归算法</h2><p><strong>分类算法</strong><br>预测一个人是否患有肺癌<br>将人群分类为<strong>有肺癌的</strong>和<strong>没有肺癌的</strong>这两类</p>
+<p><strong>回归算法</strong><br>预测一个人患肺癌的概率<br>一个患肺癌的概率可能是1%, 50%, 99%</p>
+<p>分类问题可以转化为回归问题<br>用回归算法分析一群人, <strong>给定一个阈值</strong>, 在阈值或阈值以上的人归为<strong>有肺癌的</strong>, 在阈值以下的人归为<strong>没有肺癌的</strong></p>
+<h2 id="2-线性回归"><a href="#2-线性回归" class="headerlink" title="2 线性回归"></a>2 线性回归</h2><p><strong>二元线性回归</strong><br>一些平面数据点, 假设y和x呈线性关系<br>一个二元一次方程, 在直角坐标系中表现为一条直线<br>线性回归指的就是, 用一个二元一次方程, 使得这条直线尽可能拟合数据点<br>这样, 就能根据该方程预测自变量所对应的因变量了<br>$y = \beta_{0} + \beta_{1}x$</p>
+<p><strong>多元线性回归</strong><br>一些平面点, 假设y和x1, x2, …, xn呈线性关系<br>一个n元一次方程, 被用于拟合数据点<br>$y = \beta_{0} + \beta_{1}x_{1} + \beta_{2}x_{2} + … + \beta_{n}x_{n}$</p>
+<p><strong>估计值</strong><br>估计值是<strong>准确值</strong>的估计, 属于<strong>统计学</strong>的范畴<br>估计值和准确值之间存在误差$\mu$<br>作为估计值的变量上有一个尖角帽$\hat{a}$</p>
+<h2 id="3-损失函数"><a href="#3-损失函数" class="headerlink" title="3 损失函数"></a>3 损失函数</h2><p><strong>样本观测值</strong><br>样本观测值即准确值</p>
+<p><strong>数据集</strong><br>样本观测值的集合</p>
+<p><strong>残差</strong><br>残差等于准确值减去估计值$e=y-\hat{y}$</p>
+<p><strong>残差平方和</strong>,  <strong>损失函数</strong><br>一个<strong>数据集</strong>中的所有残差的平方和<br>$$<br>Q=\displaystyle\sum_{1}^{n} (y_{i}-\hat{y}<em>{i})^2<br>= \displaystyle\sum</em>{1}^{n} (y_{i}-(\hat{\beta}<em>{0}+\hat{\beta}</em>{1} x_{i}))^2<br>$$<br>损失函数是衡量回归模型误差的函数<br>这个函数的值<strong>越小</strong>, 说明直线<strong>越能拟合数据集</strong></p>
+<h2 id="4-最小二乘估计"><a href="#4-最小二乘估计" class="headerlink" title="4 最小二乘估计"></a>4 最小二乘估计</h2><p><strong>最小二乘法</strong><br>二乘, 是<strong>平方</strong>的意思<br>最小二乘法是根据<strong>二元二次方程式</strong>求出<strong>两个参数值</strong>的方法</p>
+<p>在损失函数中<br>将$\hat{\beta}<em>{0}$和$\hat{\beta}</em>{1}$视为未知数, 就得到了一个<strong>凸函数</strong><br>可知导数为0时, Q取最小值, 故<br>将损失函数分别对$\hat{\beta}<em>{0}$和$\hat{\beta}</em>{1}$<strong>求偏导</strong><br>再将<strong>所有样本观测值</strong>代入, 即可得$\hat{\beta}<em>{0}$和$\hat{\beta}</em>{1}$</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/04/Python-based-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1597,14 +1677,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>

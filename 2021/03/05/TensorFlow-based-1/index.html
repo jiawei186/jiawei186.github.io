@@ -28,7 +28,7 @@
 <meta property="og:description" content="TensorFlow-based-1  1 安装  1.1 Anaconda 下载并安装Anaconda  1.2 PyCharm 下载并安装PyCharm 建议安装免费的Community版本  1.3 command 打开Anaconda Prompt, 输入pip install tensorflow  1.4 测试 在Anaconda Prompt中进入Python, 并输入以下代码进行">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-05T08:54:25.000Z">
-<meta property="article:modified_time" content="2021-03-08T13:56:05.440Z">
+<meta property="article:modified_time" content="2021-03-08T14:49:04.877Z">
 <meta property="article:author" content="黄嘉玮">
 <meta name="twitter:card" content="summary">
 
@@ -303,59 +303,6 @@
 上方代码传入了一个Python列表, 列表中的每一个元素都是一个<code>(变量的偏导数, 变量)</code>对, 即<code>[(grad_w, w), (grad_b, b)]</code></p>
 <p>通过<code>grads = tape.gradient(loss, variables)</code>求出tape中记录的<code>loss</code>关于<code>variables = [w, b]</code>中每个变量的偏导数, 即<code>grads = [grad_w, grad_b]</code></p>
 <p>使用Python的<code>zip()</code>将<code>grads = [grad_w, grad_b]</code>和<code>vars = [w, b]</code>拼装在一起, 从而组合出所需的参数</p>
-<h2 id="4-其它疑难"><a class="markdownIt-Anchor" href="#4-其它疑难"></a> 4 其它疑难</h2>
-<table>
-<thead>
-<tr>
-<th>TF反馈的信息种类</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V</td>
-<td>全部信息</td>
-</tr>
-<tr>
-<td>D</td>
-<td>调试信息</td>
-</tr>
-<tr>
-<td>I</td>
-<td>一般信息</td>
-</tr>
-<tr>
-<td>W</td>
-<td>警告信息</td>
-</tr>
-<tr>
-<td>E</td>
-<td>错误信息</td>
-</tr>
-<tr>
-<td>F</td>
-<td>致命错误</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><strong>AttributeError: module ‘tensorflow’ has no attribute 'enable_eager_execution’</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TF2中移除了TF1中原有的<code>enable_eager_execution()</code></td>
-</tr>
-<tr>
-<td>一是改代码使得语法适应TF2</td>
-</tr>
-<tr>
-<td>二是在TF2中使用TF1的兼容<code>import tensorflow.compat.v1 as tf</code></td>
-</tr>
-</tbody>
-</table>
 
     </div>
 
@@ -436,7 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tensorflow-based-1"><span class="nav-number">1.</span> <span class="nav-text"> TensorFlow-based-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-anaconda"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 1.1 Anaconda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-pycharm"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 1.2 PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-command"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 1.3 command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.4.</span> <span class="nav-text"> 1.4 测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B1%82%E5%AF%BC"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 求导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 2.1 一元函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E5%81%8F%E5%AF%BC%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 2.2 偏导数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 3.1 定义数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 3.2 梯度下降法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%85%B6%E5%AE%83%E7%96%91%E9%9A%BE"><span class="nav-number">1.4.</span> <span class="nav-text"> 4 其它疑难</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tensorflow-based-1"><span class="nav-number">1.</span> <span class="nav-text"> TensorFlow-based-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-anaconda"><span class="nav-number">1.1.1.</span> <span class="nav-text"> 1.1 Anaconda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-pycharm"><span class="nav-number">1.1.2.</span> <span class="nav-text"> 1.2 PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-command"><span class="nav-number">1.1.3.</span> <span class="nav-text"> 1.3 command</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.4.</span> <span class="nav-text"> 1.4 测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%B1%82%E5%AF%BC"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 求导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 2.1 一元函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E5%81%8F%E5%AF%BC%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 2.2 偏导数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 3.1 定义数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 3.2 梯度下降法</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

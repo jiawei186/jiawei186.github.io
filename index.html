@@ -358,59 +358,6 @@
 上方代码传入了一个Python列表, 列表中的每一个元素都是一个<code>(变量的偏导数, 变量)</code>对, 即<code>[(grad_w, w), (grad_b, b)]</code></p>
 <p>通过<code>grads = tape.gradient(loss, variables)</code>求出tape中记录的<code>loss</code>关于<code>variables = [w, b]</code>中每个变量的偏导数, 即<code>grads = [grad_w, grad_b]</code></p>
 <p>使用Python的<code>zip()</code>将<code>grads = [grad_w, grad_b]</code>和<code>vars = [w, b]</code>拼装在一起, 从而组合出所需的参数</p>
-<h2 id="4-其它疑难"><a class="markdownIt-Anchor" href="#4-其它疑难"></a> 4 其它疑难</h2>
-<table>
-<thead>
-<tr>
-<th>TF反馈的信息种类</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>V</td>
-<td>全部信息</td>
-</tr>
-<tr>
-<td>D</td>
-<td>调试信息</td>
-</tr>
-<tr>
-<td>I</td>
-<td>一般信息</td>
-</tr>
-<tr>
-<td>W</td>
-<td>警告信息</td>
-</tr>
-<tr>
-<td>E</td>
-<td>错误信息</td>
-</tr>
-<tr>
-<td>F</td>
-<td>致命错误</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><strong>AttributeError: module ‘tensorflow’ has no attribute 'enable_eager_execution’</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TF2中移除了TF1中原有的<code>enable_eager_execution()</code></td>
-</tr>
-<tr>
-<td>一是改代码使得语法适应TF2</td>
-</tr>
-<tr>
-<td>二是在TF2中使用TF1的兼容<code>import tensorflow.compat.v1 as tf</code></td>
-</tr>
-</tbody>
-</table>
 
       
     </div>

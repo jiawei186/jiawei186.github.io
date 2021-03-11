@@ -28,7 +28,7 @@
 <meta property="og:description" content="Python-based-1  1 命令行 查看各参数的帮助信息 python -h  2 标识符    标识符的构成 标识符对大小写敏感      第一位 第二位 第n位   字母, 下划线 数字, 字母, 下划线 …    Python3中可以用中文标识符和非ASCII标识符作为变量名 编码 默认情况下Python3的源码文件使用UTF-8编码 所有字符串都是unicode字符串  2.1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-01T09:50:52.000Z">
-<meta property="article:modified_time" content="2021-03-04T05:31:39.764Z">
+<meta property="article:modified_time" content="2021-03-11T11:36:53.518Z">
 <meta property="article:author" content="黄嘉玮">
 <meta name="twitter:card" content="summary">
 
@@ -776,84 +776,6 @@ python中单引号和双引号的作用完全相同</p>
 </tr>
 </tbody>
 </table>
-<h3 id="64-格式输出"><a class="markdownIt-Anchor" href="#64-格式输出"></a> 6.4 格式输出</h3>
-<table>
-<thead>
-<tr>
-<th>字符串格式符</th>
-<th>解释</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%c</td>
-<td>格式化字符及其ASCII码</td>
-<td></td>
-</tr>
-<tr>
-<td>%s</td>
-<td>格式化字符串</td>
-<td>print(“我叫 %s , 今年 %d 岁” % (‘小明’, 10))</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>格式化整数</td>
-<td>print(“我叫 %s , 今年 %d 岁” % (‘小明’, 10))</td>
-</tr>
-<tr>
-<td>%u</td>
-<td>格式化无符号整型</td>
-<td></td>
-</tr>
-<tr>
-<td>%o</td>
-<td>格式化无符号八进制数</td>
-<td></td>
-</tr>
-<tr>
-<td>%x</td>
-<td>格式化无符号十六进制数</td>
-<td></td>
-</tr>
-<tr>
-<td>%X</td>
-<td>格式化无符号十六进制数(大写)</td>
-<td></td>
-</tr>
-<tr>
-<td>%f</td>
-<td>格式化浮点数字, 可指定小数点后的精度</td>
-<td></td>
-</tr>
-<tr>
-<td>%e, %E</td>
-<td>用科学计数法格式化浮点数</td>
-<td></td>
-</tr>
-<tr>
-<td>%g</td>
-<td>%f和%e的简写</td>
-<td></td>
-</tr>
-<tr>
-<td>%G</td>
-<td>%f和%E的简写</td>
-<td></td>
-</tr>
-<tr>
-<td>%p</td>
-<td>用十六进制格式化变量的地址</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="65-接续"><a class="markdownIt-Anchor" href="#65-接续"></a> 6.5 接续</h3>
-<p>三引号<code>'''</code>允许一个字符串跨行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">abc</span></span><br><span class="line"><span class="string">def</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="66-f-string"><a class="markdownIt-Anchor" href="#66-f-string"></a> 6.6 f-string</h3>
-<p>使用f-string方法进行变量代入时, 不需要再使用字符串格式符</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;abc&#x27;</span></span><br><span class="line"><span class="string">f&#x27;<span class="subst">&#123;a&#125;</span>+def&#x27;</span> <span class="comment"># &#x27;abcdef&#x27;</span></span><br></pre></td></tr></table></figure>
 <h2 id="7-元组"><a class="markdownIt-Anchor" href="#7-元组"></a> 7 元组</h2>
 <p>字符串, 列表, 元组都是<strong>序列</strong>, 元素都是有序的<br />
 可以将字符串和列表看作是特殊的元组</p>
@@ -947,10 +869,6 @@ python中单引号和双引号的作用完全相同</p>
 <p><strong>更改列表元素</strong><br />
 使用<code>=</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">a[<span class="number">0</span>]=<span class="number">9</span>   <span class="comment"># 9, 2, 3</span></span><br><span class="line">a[<span class="number">1</span>]=[]  <span class="comment"># 9, 3</span></span><br></pre></td></tr></table></figure>
-<h3 id="82-嵌套列表"><a class="markdownIt-Anchor" href="#82-嵌套列表"></a> 8.2 嵌套列表</h3>
-<p>可以将一个列表作为元素嵌套在另一个列表里</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = [a, n]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">[[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[<span class="number">0</span>]</span><br><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line"><span class="string">&#x27;b&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="81-方法"><a class="markdownIt-Anchor" href="#81-方法"></a> 8.1 方法</h3>
 <table>
 <thead>
 <tr>
@@ -1008,34 +926,6 @@ python中单引号和双引号的作用完全相同</p>
 <h2 id="9-集合"><a class="markdownIt-Anchor" href="#9-集合"></a> 9 集合</h2>
 <p>集合和列表的属性非常相似</p>
 <p>重复的元素会被删除</p>
-<h3 id="91-集合运算"><a class="markdownIt-Anchor" href="#91-集合运算"></a> 9.1 集合运算</h3>
-<table>
-<thead>
-<tr>
-<th>a=set(‘abcdef’), b=set(‘abcg’)</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>a-b</td>
-<td>{‘d’, ‘e’, ‘f’}</td>
-</tr>
-<tr>
-<td>a|b</td>
-<td>{‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’, ‘g’}</td>
-</tr>
-<tr>
-<td>a&amp;b</td>
-<td>{‘a’, ‘b’, ‘c’}</td>
-</tr>
-<tr>
-<td>a^b</td>
-<td>{‘d’, ‘e’, ‘f’, ‘g’}</td>
-</tr>
-</tbody>
-</table>
-<h3 id="92-集合操作"><a class="markdownIt-Anchor" href="#92-集合操作"></a> 9.2 集合操作</h3>
 <table>
 <thead>
 <tr>
@@ -1094,302 +984,6 @@ python中单引号和双引号的作用完全相同</p>
 </tbody>
 </table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;laok&#x27;</span>, <span class="string">&#x27;code&#x27;</span>: <span class="number">203</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a[<span class="string">&#x27;name&#x27;</span>])   <span class="comment"># laok</span></span><br><span class="line">print(a)           <span class="comment"># &#123;&#x27;name&#x27;: &#x27;laok&#x27;, &#x27;code&#x27;: 203&#125;</span></span><br><span class="line">print(a.keys)      <span class="comment"># a_keys([&#x27;name&#x27;, &#x27;code&#x27;])</span></span><br><span class="line">print(a.values)    <span class="comment"># a_values([&#x27;laok&#x27;, 203])</span></span><br></pre></td></tr></table></figure>
-<h2 id="11-运算符"><a class="markdownIt-Anchor" href="#11-运算符"></a> 11 运算符</h2>
-<table>
-<thead>
-<tr>
-<th>比较运算符</th>
-<th>含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>如果相等则返回true</td>
-<td>a==b</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>不等</td>
-<td>a!=b</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于</td>
-<td>a&gt;b</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于</td>
-<td>a&lt;b</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>大于等于</td>
-<td>a&gt;=b</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>小于等于</td>
-<td>a&lt;=b</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>身份运算符</th>
-<th>含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is</td>
-<td>两个标识符引用的是同一个对象, 返回true, 否则返回false</td>
-<td>x is y</td>
-</tr>
-<tr>
-<td>is not</td>
-<td>两个标识符引用的不是同一个对象, 返回true, 否则返回false</td>
-<td>x is not y</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>赋值运算符</th>
-<th>含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>=</td>
-<td>基础赋值</td>
-<td>a=b</td>
-</tr>
-<tr>
-<td>+=</td>
-<td>a=a+b</td>
-<td>a+=b</td>
-</tr>
-<tr>
-<td>-=</td>
-<td>a=a-b</td>
-<td>a-=b</td>
-</tr>
-<tr>
-<td>*=</td>
-<td>a=a*b</td>
-<td>a*=b</td>
-</tr>
-<tr>
-<td>/=</td>
-<td>a=a/b</td>
-<td>a/=b</td>
-</tr>
-<tr>
-<td>%</td>
-<td>a=a%b</td>
-<td>a%=b</td>
-</tr>
-<tr>
-<td>**=</td>
-<td>a=a**b</td>
-<td>a**=b</td>
-</tr>
-<tr>
-<td>//=</td>
-<td>a=a//b</td>
-<td>a//=b</td>
-</tr>
-<tr>
-<td>:=</td>
-<td>在表达式内部为变量赋值</td>
-<td>if(a := b) &gt; 10</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>位运算符</th>
-<th>含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&amp;</td>
-<td>将操作数都视为二进制数, 按位与</td>
-<td>a&amp;b</td>
-</tr>
-<tr>
-<td>|</td>
-<td>按位或</td>
-<td>a|b</td>
-</tr>
-<tr>
-<td>^</td>
-<td>按位异或</td>
-<td>a^b</td>
-</tr>
-<tr>
-<td>~</td>
-<td>按位取反</td>
-<td>~a</td>
-</tr>
-<tr>
-<td>&lt;&lt;</td>
-<td>各二进制位左移若干位, 高位丢弃, 低位补0</td>
-<td>a&lt;&lt;2</td>
-</tr>
-<tr>
-<td>&gt;&gt;</td>
-<td>各二进制位右移若干位, 地位丢弃, 高位补0</td>
-<td>a&gt;&gt;2</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>逻辑运算符</th>
-<th>含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>and</td>
-<td>两个操作数都是非0, 返回true, 否则返回false</td>
-<td>1 and 2 = true</td>
-</tr>
-<tr>
-<td>or</td>
-<td>其中一个操作数是非0, 返回true, 否则返回false</td>
-<td>1 or 0 = true</td>
-</tr>
-<tr>
-<td>not</td>
-<td>操作数是0, 返回true, 否则返回false</td>
-<td>not 0 = true</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>成员运算符</th>
-<th>含义</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in</td>
-<td>在指定的序列中找到了目标, 返回true, 否则返回false</td>
-<td>a in list</td>
-</tr>
-<tr>
-<td>not in</td>
-<td>在指定的序列中没有找到目标, 返回true, 否则返回false</td>
-<td>a not in list</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>优先级从高到低</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>**</td>
-<td>指数</td>
-</tr>
-<tr>
-<td>~, +, -</td>
-<td>按位翻转, 一元加号, 一元减号</td>
-</tr>
-<tr>
-<td>*, /, %, //</td>
-<td>乘号, 除号, 取余号, 取整号</td>
-</tr>
-<tr>
-<td>+, -</td>
-<td>二元加号, 二元减号</td>
-</tr>
-<tr>
-<td>&gt;&gt;, &lt;&lt;</td>
-<td>右移号, 左移号</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>位与号</td>
-</tr>
-<tr>
-<td>|, ^</td>
-<td>位或号, 位异或号</td>
-</tr>
-<tr>
-<td>&lt;=, &lt;, &gt;, &gt;=</td>
-<td>小于等于号, 小于号, 大于号, 大于等于号</td>
-</tr>
-<tr>
-<td>==, !=</td>
-<td>等于号, 不等于号</td>
-</tr>
-<tr>
-<td>=, %=, /=, //=, -=, +=, *=, **=</td>
-<td>各种赋值号</td>
-</tr>
-<tr>
-<td>is, is not</td>
-<td>身份号</td>
-</tr>
-<tr>
-<td>in, not in</td>
-<td>成员号</td>
-</tr>
-<tr>
-<td>and, or, not</td>
-<td>逻辑号</td>
-</tr>
-</tbody>
-</table>
-<h2 id="12-常用函数"><a class="markdownIt-Anchor" href="#12-常用函数"></a> 12 常用函数</h2>
-<h3 id="keys"><a class="markdownIt-Anchor" href="#keys"></a> keys</h3>
-<p>用在字典类型的变量中<br />
-用于列出所有的<strong>键</strong></p>
-<h3 id="values"><a class="markdownIt-Anchor" href="#values"></a> values</h3>
-<p>用在字典类型的变量中<br />
-用于列出所有的元素值</p>
-<h3 id="del"><a class="markdownIt-Anchor" href="#del"></a> del</h3>
-<p>删除某个变量<br />
-<code>del var</code></p>
-<h3 id="type"><a class="markdownIt-Anchor" href="#type"></a> type</h3>
-<p>查询某个变量的类型<br />
-<code>type(a)</code></p>
-<h3 id="isinstance"><a class="markdownIt-Anchor" href="#isinstance"></a> isinstance</h3>
-<p>查询是否是某一个类的子类</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">isinstance</span>(A(), A)</span><br><span class="line"><span class="built_in">isinstance</span>(B(), A)</span><br></pre></td></tr></table></figure>
-<h3 id="print"><a class="markdownIt-Anchor" href="#print"></a> print</h3>
-<p>print输出默认是换行的<br />
-如果要实现不换行, 就要在变量末尾加上<code>, end= &quot; &quot;</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="string">&#x27;a&#x27;</span></span><br><span class="line">print(x)</span><br><span class="line">print(x, end=<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="import"><a class="markdownIt-Anchor" href="#import"></a> import</h3>
-<p>将整个模块导入文件中<br />
-<code>import xxx</code></p>
-<p>从某个模块中导入几个函数<br />
-<code>from xxx import a, b, c</code></p>
-<p>从某个模块中导入所有函数<br />
-<code>from xxx import *</code></p>
 
     </div>
 
@@ -1467,7 +1061,7 @@ python中单引号和双引号的作用完全相同</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-based-1"><span class="nav-number">1.</span> <span class="nav-text"> Python-based-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 命令行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 标识符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E4%BF%9D%E7%95%99%E5%AD%97-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 2.1 保留字, 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E6%B3%A8%E9%87%8A"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 2.2 注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-%E7%BC%A9%E8%BF%9B"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 3.1 缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-%E7%A9%BA%E8%A1%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 3.2 空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-%E5%A4%9A%E5%8F%A5"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 3.3 多句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8F%98%E9%87%8F"><span class="nav-number">1.4.</span> <span class="nav-text"> 4 变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 4.1 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-%E8%B5%8B%E5%80%BC"><span class="nav-number">1.4.2.</span> <span class="nav-text"> 4.2 赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.4.3.</span> <span class="nav-text"> 4.3 转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%95%B0%E5%AD%97"><span class="nav-number">1.5.</span> <span class="nav-text"> 5 数字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-%E7%A7%8D%E7%B1%BB"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 5.1 种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 5.2 算术运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.3.</span> <span class="nav-text"> 5.3 函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.6.</span> <span class="nav-text"> 6 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#61-%E8%BD%AC%E4%B9%89"><span class="nav-number">1.6.1.</span> <span class="nav-text"> 6.1 转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-%E6%88%AA%E5%8F%96"><span class="nav-number">1.6.2.</span> <span class="nav-text"> 6.2 截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-%E8%BF%90%E7%AE%97"><span class="nav-number">1.6.3.</span> <span class="nav-text"> 6.3 运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#64-%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA"><span class="nav-number">1.6.4.</span> <span class="nav-text"> 6.4 格式输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#65-%E6%8E%A5%E7%BB%AD"><span class="nav-number">1.6.5.</span> <span class="nav-text"> 6.5 接续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#66-f-string"><span class="nav-number">1.6.6.</span> <span class="nav-text"> 6.6 f-string</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%85%83%E7%BB%84"><span class="nav-number">1.7.</span> <span class="nav-text"> 7 元组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#71-%E5%AF%B9%E6%AF%94"><span class="nav-number">1.7.1.</span> <span class="nav-text"> 7.1 对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-%E5%87%BD%E6%95%B0"><span class="nav-number">1.7.2.</span> <span class="nav-text"> 7.2 函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%88%97%E8%A1%A8"><span class="nav-number">1.8.</span> <span class="nav-text"> 8 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#82-%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="nav-number">1.8.1.</span> <span class="nav-text"> 8.2 嵌套列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#81-%E6%96%B9%E6%B3%95"><span class="nav-number">1.8.2.</span> <span class="nav-text"> 8.1 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E9%9B%86%E5%90%88"><span class="nav-number">1.9.</span> <span class="nav-text"> 9 集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#91-%E9%9B%86%E5%90%88%E8%BF%90%E7%AE%97"><span class="nav-number">1.9.1.</span> <span class="nav-text"> 9.1 集合运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#92-%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C"><span class="nav-number">1.9.2.</span> <span class="nav-text"> 9.2 集合操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E5%AD%97%E5%85%B8"><span class="nav-number">1.10.</span> <span class="nav-text"> 10 字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#101-%E6%93%8D%E4%BD%9C"><span class="nav-number">1.10.1.</span> <span class="nav-text"> 10.1 操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.11.</span> <span class="nav-text"> 11 运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-number">1.12.</span> <span class="nav-text"> 12 常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keys"><span class="nav-number">1.12.1.</span> <span class="nav-text"> keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#values"><span class="nav-number">1.12.2.</span> <span class="nav-text"> values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#del"><span class="nav-number">1.12.3.</span> <span class="nav-text"> del</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#type"><span class="nav-number">1.12.4.</span> <span class="nav-text"> type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isinstance"><span class="nav-number">1.12.5.</span> <span class="nav-text"> isinstance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print"><span class="nav-number">1.12.6.</span> <span class="nav-text"> print</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import"><span class="nav-number">1.12.7.</span> <span class="nav-text"> import</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-based-1"><span class="nav-number">1.</span> <span class="nav-text"> Python-based-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text"> 1 命令行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.2.</span> <span class="nav-text"> 2 标识符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-%E4%BF%9D%E7%95%99%E5%AD%97-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 2.1 保留字, 关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-%E6%B3%A8%E9%87%8A"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 2.2 注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.3.</span> <span class="nav-text"> 3 语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-%E7%BC%A9%E8%BF%9B"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 3.1 缩进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-%E7%A9%BA%E8%A1%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 3.2 空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-%E5%A4%9A%E5%8F%A5"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 3.3 多句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8F%98%E9%87%8F"><span class="nav-number">1.4.</span> <span class="nav-text"> 4 变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 4.1 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-%E8%B5%8B%E5%80%BC"><span class="nav-number">1.4.2.</span> <span class="nav-text"> 4.2 赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.4.3.</span> <span class="nav-text"> 4.3 转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%95%B0%E5%AD%97"><span class="nav-number">1.5.</span> <span class="nav-text"> 5 数字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-%E7%A7%8D%E7%B1%BB"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 5.1 种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 5.2 算术运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-%E5%87%BD%E6%95%B0"><span class="nav-number">1.5.3.</span> <span class="nav-text"> 5.3 函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.6.</span> <span class="nav-text"> 6 字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#61-%E8%BD%AC%E4%B9%89"><span class="nav-number">1.6.1.</span> <span class="nav-text"> 6.1 转义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-%E6%88%AA%E5%8F%96"><span class="nav-number">1.6.2.</span> <span class="nav-text"> 6.2 截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-%E8%BF%90%E7%AE%97"><span class="nav-number">1.6.3.</span> <span class="nav-text"> 6.3 运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%85%83%E7%BB%84"><span class="nav-number">1.7.</span> <span class="nav-text"> 7 元组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#71-%E5%AF%B9%E6%AF%94"><span class="nav-number">1.7.1.</span> <span class="nav-text"> 7.1 对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-%E5%87%BD%E6%95%B0"><span class="nav-number">1.7.2.</span> <span class="nav-text"> 7.2 函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%88%97%E8%A1%A8"><span class="nav-number">1.8.</span> <span class="nav-text"> 8 列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E9%9B%86%E5%90%88"><span class="nav-number">1.9.</span> <span class="nav-text"> 9 集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E5%AD%97%E5%85%B8"><span class="nav-number">1.10.</span> <span class="nav-text"> 10 字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#101-%E6%93%8D%E4%BD%9C"><span class="nav-number">1.10.1.</span> <span class="nav-text"> 10.1 操作</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1481,7 +1075,7 @@ python中单引号和双引号的作用完全相同</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
